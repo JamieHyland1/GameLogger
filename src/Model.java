@@ -9,13 +9,27 @@ public class Model {
 		return instance;
 	}
 	private ArrayList<Game> games;
-	private Model () {
+	 Model () {
 		//create add Game method
+		
+			
 		
 		//create remove Game method
 		
 		//create view games method
 		
 		//create update games method
+	}
+	public boolean addGame(Game g) {
+		if(g != null) {
+			games.add(g);
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	public ArrayList<Game> viewGames(){
+		return games;
 	}
 }
