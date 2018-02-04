@@ -48,11 +48,9 @@ public class Game {
 	public void setPrice(double price) {
 		this.price = price;
 	}
+
+	@Override
 	public String toString() {
-		String n =  "Name: " + this.name + "\n" +
-					"Publisher: " + this.publisher + "\n" +
-					"Release: " + this.release + "\n" +
-					"Price: " + this.price;
-		return n;
+		return "Game [Name: " + name + ", Publisher: " + publisher + ", Release: " + release + ", Price: " + price + "]";
 	}
 }
