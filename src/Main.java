@@ -18,7 +18,7 @@ public class Main {
 	    	choice = in.nextInt();
 	    	switch(choice) {
 		    	case 1:
-		    		if(addGame(in,g,m) == true) {
+		    		if(addGame(in,m) == true) {
 		    			Print("The game was added succesfully ");
 		    		}else {
 		    			Print("The game was not added, please try again");
@@ -49,25 +49,28 @@ public class Main {
 	}
 	
 	
-	private static Boolean addGame(Scanner in, Game g, Model m) {
+	private static Boolean addGame(Scanner in, Model m) {
+		Print("=======================================================");
 		Print("Enter name of game:");
-		String n = in.next();
-		g.setName(n);
+		String n = in.nextLine();
+		Print("=======================================================");
 		Print("Enter game publisher:");
-		String pub = in.next();
-		g.setPublisher(pub);
+		String pub = in.nextLine();
+		Print("=======================================================");
 		Print("Enter Price:");
 		double p = in.nextDouble();
-		g.setPrice(p);
+		Print("=======================================================");
 		Print("Enter in release date: (dd/mm/yyyy)");
-		String d = in.next();
-		g.setRelease(d);
+		String d = in.nextLine();
+		Print("=======================================================");
+		Game g = new Game(n,pub,d,p);
+		//Print(g.toString());
 		return m.addGame(g);
 	}
 	
 	//method for printing objects without having to write Sys.out
 	public static void Print(Object o) {
-	  System.out.print(o);	
+	  System.out.println(o);	
 	}
 	
 }
