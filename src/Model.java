@@ -8,12 +8,10 @@ public class Model {
 		}
 		return instance;
 	}
-	private ArrayList<Game> games;
+	private ArrayList<Game> games = new ArrayList<Game>();
 	 Model () {
 		//create add Game method
-		
-			
-		
+
 		//create remove Game method
 		
 		//create view games method
@@ -21,11 +19,12 @@ public class Model {
 		//create update games method
 	}
 	public boolean addGame(Game g) {
-		if(g != null) {
-			games.add(g);
+		try {
+			//g.toString();
+			this.games.add(g);
 			return true;
 		}
-		else {
+		catch(Exception e) {
 			return false;
 		}
 	}
